@@ -1,8 +1,6 @@
 class App extends React.Component {
 
 
-
-
     render() {
         return (
             <div>
@@ -28,7 +26,7 @@ class App extends React.Component {
                         <div class="topic" id="photosynthesis">Photosynthesis</div>
                     </div>
                 </div>
-
+                
                 <div class="sticky" id="certification-quiz">
                     <div id="close"></div>
                     <div id="title"></div>
@@ -46,5 +44,41 @@ class App extends React.Component {
         )
     }
 }
+
+// Quiz Constructor
+function CertificationQuiz(title, description, questions, answers) {
+    this.title = title;
+    this.description = description;
+    this.questions = questions;
+    this.answers = answers;
+}
+
+// Question Constructor
+function Question(question, a, b, c, d, answer) {
+    this.question = question;
+    this.optionA  = a;
+    this.optionB  = b;
+    this.optionC  = c;
+    this.optionD = d;
+    this.answer = answer;
+}
+
+ var sportsCertificationQuiz = new CertificationQuiz(
+     "Certification in Sports",
+     "Have you ever wanted to prove that you are good at sports? What better way than with a certification in sports?",
+    [   new Question(
+            "Which of the following is not a sport?",
+            "Baseball",
+            "Golf",
+            "Chess Boxing",
+            "Soccer"), 
+        new Question(
+            "Which of the following is not a sport?",
+            "Baseball",
+            "Golf",
+            "Chess Boxing",
+            "Soccer"), 
+    ]
+ )
 
 ReactDOM.render(<App />, document.getElementById('app'));
