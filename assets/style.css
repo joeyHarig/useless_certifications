@@ -175,24 +175,6 @@ a {
   background-image: linear-gradient( 45deg, rgba(23, 211, 70, 0.7), rgba(23, 211, 133, 0.9)), url(img//cert-bg//photosynthesis.jpg);
 }
 
-/*   QUIZ   */
-
-#certification-quiz {
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 3;
-  background-color: var(--white);
-}
-
-/*  FOOTER  */
-
-.footer {
-  position: relative;
-  height: 500px;
-}
-
 /* smart phones (portrait and landscape) ----------- */
 @media only screen and (min-width : 320px) and (max-width : 767px) {
 
