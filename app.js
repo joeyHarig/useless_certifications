@@ -26,19 +26,7 @@ class App extends React.Component {
                         <div class="topic" id="photosynthesis">Photosynthesis</div>
                     </div>
                 </div>
-                
-                <div class="sticky" id="certification-quiz">
-                    <div id="close"></div>
-                    <div id="title"></div>
-                    <div id="description"></div>
-                    <div id="question-box">
-                        <div id="question"></div>
-                        <div class="option"></div>
-                    </div>
-                    <div id="button"></div>
-                </div>
-
-            
+           
                 <footer class="footer"></footer>
             </div>
         )
