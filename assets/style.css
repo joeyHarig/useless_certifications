@@ -31,6 +31,7 @@ body {
   background-size: 340px, auto;
   background-attachment: fixed;
   letter-spacing: 1px;
+  width: 100vw;
 }
 
 a {
@@ -126,7 +127,7 @@ a {
 
 #certifications, #about {
   position: relative;
-  width: 70%;
+  width: 80%;
   left: 50%;
   transform: translate(-50%, 0%);
 }
@@ -278,7 +279,7 @@ a {
   background-color: var(--grey-dark);
 }
 
-#button-start, #button-next, #results-download {
+#button-start, #button-next, #results-download, #dumbass-download {
   position: absolute;
   bottom: 75px;
   left: 50%;
@@ -288,7 +289,7 @@ a {
   color: var(--grey-dark);
 }
 
-#results-download, #button-start {
+#results-download, #dumbass-download, #button-start {
   bottom: 20%;
 }
 
@@ -315,6 +316,7 @@ a {
 .option-text, .option-selector {
   display: inline;
   font-size: 24px;
+  line-height: 32px;
   font-weight: inherit;
   color: inherit;
   cursor: pointer;
@@ -350,6 +352,7 @@ a {
   
   #navigation {
     grid-gap: 0px;
+    width: 100vw;
     grid-template-rows: 2fr 1fr 1fr 1fr 40%;
     padding: 10px 5% 10px 5%;
     height: 60px;
@@ -369,8 +372,7 @@ a {
   }
 
   .logo-nav-open {
-    margin-left: 50%;
-    transform: translate( -50%, 0%);
+    visibility: hidden;
   }
 
   #menu {
@@ -392,7 +394,7 @@ a {
   #menu-close {
     position: absolute;
     left: 50%;
-    bottom: 20%;
+    bottom: 25%;
     transform: translate(-50%, -50%);
     width: 40px;
     height: 40px;
@@ -434,14 +436,18 @@ a {
     font-size: 18px;
   }
 
-  .certifications-title {
-    margin: 0px 0px 25px 0px;
+  .certifications-title, .about-title {
+    text-align: center;
+    margin: 0px 0px 50px 0px;
     font-size: 40px;
   }
 
-  #certifications {
-    margin: 50px 0% 50px 0%;
+  #certifications, #about { 
+    margin: 100px 0% 50px 0%;
+    width: 80%;
   }
+
+  .topics { margin: 0px; }
 
   .topic {
     width: 200px;
@@ -449,6 +455,71 @@ a {
     font-size: 24px;
   }
 
+
+  /*   ABOUT   */
+
+  .about-body {
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey-dark);
+  }
+
+  .about-photo { visibility: hidden; }
+
+  /*  QUIZ SCREEN  */
+
+  #certification-quiz {
+    height: 100%;
+    width: 100%;
+  }
+  #title-box { top: 200px; }
+
+  #quiz-title, #question-title, #results-title {
+    margin: 80px 10% 0% 10%;
+    font-size: 24px;
+  }
+  
+  #quiz-description, #question-description, #results-description{
+    margin: 160px 10% 0px 10%;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  #close {
+    margin: 40px 0% 0px calc(92% - 10px);
+    width: 35px;
+    height: 35px;
+  }
+  
+  #button-start, #button-next, #results-download, #dumbass-download {
+    bottom: 20%;
+    font-size: 24px;
+  }
+  
+  #results-download, #dumbass-download, #button-start { bottom: 20%; }
+  
+  #button-next { bottom: 75px; }
+  
+  #options-box {
+    position: absolute;
+    margin: 220px 10% 0px 10%;
+  }
+  
+  .option-box { margin: 30px 0px 0px 0px; }
+  
+  .option-text, .option-selector {
+    display: inline;
+    font-size: 16px;
+  }
+  
+  .option-text {
+    margin-left: 18px;
+    line-height: 27px; 
+    white-space: pre-wrap;
+  }
+  
 }
 
 /* iPads (portrait and landscape) ----------- */

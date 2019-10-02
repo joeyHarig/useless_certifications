@@ -1,102 +1,11 @@
-class App extends React.Component {
+/*
+This app stores quiz data 
+-updates the dom with that data
+-checks the score based on correct answers
+-displays downloadable pdf docs according to score
+*/
 
-    render() {
-        return (
-            <div>
-                <div id="head"></div>
 
-                <div id="navigation" class=" sticky">
-                    <a class="logo" href="#head">UselessCertifications.com</a>
-                        <a class="nav-item" href="#cert">CERTIFICATIONS</a>
-                        <a class="nav-item" href="#ab">ABOUT</a>
-                        <a class="nav-item" href="#cont">CONTACT</a>
-                    <svg id="menu"></svg>
-                    <svg id="menu-close"></svg>
-                </div>
-
-                <header id="header">
-                    <h1 class="slogan">Let's get Official.</h1>
-                    <div class="btn btn-certify-me" href="#">Certify Me</div>
-                </header>
-
-                <div id="cert"></div>
-                <div id="certifications">
-                    <h1 class="certifications-title">Certifications</h1>
-                    <div class="topics">
-                        <div class="topic" id="wise-guy">Wise Guy</div>
-                        <div class="topic" id="alpha">Alpha</div>
-                        <div class="topic" id="sports">Sports</div>
-                        <div class="topic" id="calculator">Calculator</div>
-                    </div>
-                </div>
-
-                <div id="ab"></div>
-                <div id="about">
-                    <h1 class="about-title">About Us</h1>
-                    <div class="about-body">
-                    Have you ever wanted a certification that didn’t cost $200,000 in tuition? Have you been longing for a sense of accomplishment in your life that only a piece of paper can provide? Then look no further than the one and only <p class="bold">UselessCertifications.com</p>. Our highly advanced algorithm will determine whether or not you’ve got what it takes to earn the title of your dreams, or the title you deserve. So, don’t let Priests and shady doctors have all the fun, get a useless certificate today!
-                    </div>
-                    <div class="about-photo">
-                        <div class="pic-title pic-text">Certified</div>
-                        <div class="pic-text">"It doesn't get more real than this"</div>
-                    </div>
-                </div>
-
-                <footer class="footer"></footer>
-                
-                <div id="certification-quiz-screen">
-                    <div id="certification-quiz">
-
-                        <svg class="btn" id="close"></svg>
-
-                        <div id="title-box">
-                            <div id="quiz-title"></div>
-                            <div id="quiz-description"></div>
-                            <div class="btn" id="button-start">Start</div>
-                        </div>
-
-                        <div id="question-box">
-                            <div id="question-title"></div>
-                            <div id="question-description"></div>
-
-                            <div id="options-box">
-                                <div class="option-box" id="option-a">
-                                    <div class="option-selector">a ) </div>
-                                    <div class="option-text"></div>
-                                </div>
-
-                                <div class="option-box" id="option-b">
-                                    <div class="option-selector">b ) </div>
-                                    <div class="option-text"></div>
-                                </div>
-
-                                <div class="option-box" id="option-c">
-                                    <div class="option-selector">c ) </div>
-                                    <div class="option-text"></div>
-                                </div>
-
-                                <div class="option-box" id="option-d">
-                                <div class="option-selector">d ) </div>
-                                    <div class="option-text"></div>
-                                </div>
-                            </div>
-
-                            <div class="btn" id="button-next">Next</div>
-
-                        </div>
-
-                        <div id="results-box">
-                            <div id="results-title"></div>
-                            <div id="results-description"></div>
-                            <div class="btn" id="results-download">View Certificate</div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        )
-    }
-}
 
 // Quiz Constructor
 function CertificationQuiz(title, description, pdf, questions) {
@@ -264,7 +173,7 @@ const certificationData = {
     alpha: new CertificationQuiz(
         "Certified Alpha", // Title
         "Do any of your shirts have sleeves? Has your nicotine addiction failed to develop into a health threatening condition? Can you form a sentence without saying, bruh or like? If you answered yes to any of these click away now. We’re looking for real men here",
-        "assets//certifications//sports_certification.pdf", // description
+        "assets//certifications//alpha_certification.pdf", // description
         [   new Question( // Question 1 
                 "What did you eat for breakfast this morning?", // Questions itslef
                 ["Eggs", //  option a
@@ -399,7 +308,7 @@ const certificationData = {
         ]
     ),
 }
-var dom = { //get elements by id
+var domStrings = { //get elements by id
 
     // Title elements
     titleBox: '#title-box',
@@ -414,6 +323,8 @@ var dom = { //get elements by id
     btnNext: '#button-next',
 
     opsBox: '#options-box',
+    opBox: '.option-box',
+    opText: '.option-text',
     opA: '#option-a',
     opB: '#option-b',
     opC: '#option-c',
@@ -424,6 +335,7 @@ var dom = { //get elements by id
     resultsTitle: '#results-title',
     resultsDescription: '#results-description',
     resultsDownload: '#results-download',
+    dumbassDownload: '#dumbass-download',
 
     // Parent Quiz Screen Elements
     quizScreen: '#certification-quiz-screen',
@@ -464,16 +376,18 @@ var UIController = (function() {
 
         // Hide the Quiz
         hideQuiz: function() {
-            document.querySelector(dom.quizScreen).style.visibility = 'hidden';
-            document.querySelector(dom.questionBox).style.visibility = 'hidden';
-            document.querySelector(dom.titleBox).style.visibility = 'hidden';
-            document.querySelector(dom.resultsBox).style.visibility = 'hidden';
-            document.querySelector(dom.resultsDownload).style.visibility = 'hidden';
+            document.querySelector(domStrings.quizScreen).style.visibility = 'hidden';
+            document.querySelector(domStrings.questionBox).style.visibility = 'hidden';
+            document.querySelector(domStrings.titleBox).style.visibility = 'hidden';
+            document.querySelector(domStrings.resultsBox).style.visibility = 'hidden';
+            document.querySelector(domStrings.resultsDownload).style.visibility = 'hidden';
+            document.querySelector(domStrings.dumbassDownload).style.visibility = 'hidden';
         },
 
         hideQuestions: function() {
+            var box = document.querySelectorAll(domStrings.opBox);
             for (var i = 0; i < 4; i++) {
-                document.querySelector(dom.opsBox).childNodes[i].style.visibility = 'hidden';
+                box[i].style.visibility = 'hidden';
             }
         },
 
@@ -481,63 +395,74 @@ var UIController = (function() {
         openQuiz: function(currentQuiz) {
 
             // Show the title box
-            document.querySelector(dom.quizScreen).style.visibility = 'visible';
-            document.querySelector(dom.titleBox).style.visibility = 'visible';
+            document.querySelector(domStrings.quizScreen).style.visibility = 'visible';
+            document.querySelector(domStrings.titleBox).style.visibility = 'visible';
             // Update title box
-            document.querySelector(dom.title).innerHTML = currentQuiz.title;
-            document.querySelector(dom.description).innerHTML = currentQuiz.description;
+            document.querySelector(domStrings.title).innerHTML = currentQuiz.title;
+            document.querySelector(domStrings.description).innerHTML = currentQuiz.description;
         },
 
         startQuiz: function() {
             // Hide title
-            document.querySelector(dom.titleBox).style.visibility = 'hidden'; 
+            document.querySelector(domStrings.titleBox).style.visibility = 'hidden'; 
             // Show First Question
-            document.querySelector(dom.questionBox).style.visibility = 'visible'; 
+            document.querySelector(domStrings.questionBox).style.visibility = 'visible'; 
         },
 
         showResults: function(currentQuiz, pass) {
             var title, description;
-            title = document.querySelector(dom.resultsTitle);
-            description = document.querySelector(dom.resultsDescription);
+            title = document.querySelector(domStrings.resultsTitle);
+            description = document.querySelector(domStrings.resultsDescription);
 
             // Fill results
-            if (pass === 'pass') { // If passed quiz
+            // If passed quiz
+            if (pass === 'pass') { 
+                // Title
                 title.innerHTML = 'Congratulations!';
+                // Description
                 description.innerHTML = 'You successfully passed the ' + currentQuiz.title + ' quiz. You may now view and download your "official" certificate.';
-            } else if (pass === 'veryFail') { // if failed quiz by and got .3 or less
+                // Download btn
+                document.querySelector(domStrings.resultsDownload).style.visibility = 'visible';
+            // if failed quiz by and got .3 or less
+            } else if (pass === 'veryFail') { 
                 title.innerHTML = 'Wow...';
-                description.innerHTML = 'Not only did you fail, you failed hard. We would like to award you with a official Dumb Ass Certificate. You can view and download it below';
-            } else { // if failed quiz but greater than .3
+                description.innerHTML = 'Not only did you fail, you failed hard. We would like to award you with a official Dumb Ass Certification. You can view and download it below.';
+                document.querySelector(domStrings.dumbassDownload).style.visibility = 'visible';
+
+            // if failed quiz but greater than .3
+            } else { 
                 title.innerHTML = 'Oh Well!';
                 description.innerHTML = "You didn't pass this time, but feel free to try again if you'd still like to earn your " + currentQuiz.title + '.';
             }
 
             // Hide questions
-            document.querySelector(dom.questionBox).style.visibility = 'hidden'; 
+            document.querySelector(domStrings.questionBox).style.visibility = 'hidden'; 
 
             //Show Results
-            document.querySelector(dom.resultsBox).style.visibility = 'visible'; 
+            document.querySelector(domStrings.resultsBox).style.visibility = 'visible'; 
         },
 
         showQuestion: function(currentQuiz, curQue, options) {
             // Show question title
-            document.querySelector(dom.questionTitle).innerHTML = 'Question ' + (curQue + 1) + ' of ' + (currentQuiz.questions.length);
+            document.querySelector(domStrings.questionTitle).innerHTML = 'Question ' + (curQue + 1) + ' of ' + (currentQuiz.questions.length);
             // Show question description
-            document.querySelector(dom.questionDescription).innerHTML = currentQuiz.questions[curQue].question_des;
+            document.querySelector(domStrings.questionDescription).innerHTML = currentQuiz.questions[curQue].question_des;
             
-            console.log(curQue);
+            var box =  document.querySelectorAll(domStrings.opBox);
+            var text =  document.querySelectorAll(domStrings.opText);
             // Update options
             for (var i = 0; i < options.length; i++) {
                 //for each option in the question, show the option and update it
-                document.querySelector(dom.opsBox).childNodes[i].style.visibility = 'visible';
-                document.querySelector(dom.opsBox).childNodes[i].childNodes[1].innerHTML = options[i];
+                box[i].style.visibility = 'visible';
+                text[i].innerHTML = options[i];
             }
         },
 
         // Deselect all options
         deselectAll: function() {
+            var box = document.querySelectorAll(domStrings.opBox);
             for (var i = 0; i < 4; i++) {
-                document.querySelector(dom.opsBox).childNodes[i].classList.remove('selected');
+                box[i].classList.remove('selected');
             }
         },
 
@@ -549,10 +474,10 @@ var UIController = (function() {
         // Update Next button to say "Submit"
         updateButton: function() {
             // Toggle inner html of btn
-            if (document.querySelector(dom.btnNext).innerHTML === 'Submit') {
-                document.querySelector(dom.btnNext).innerHTML = 'Next';
+            if (document.querySelector(domStrings.btnNext).innerHTML === 'Submit') {
+                document.querySelector(domStrings.btnNext).innerHTML = 'Next';
             } else {
-                document.querySelector(dom.btnNext).innerHTML = 'Submit';
+                document.querySelector(domStrings.btnNext).innerHTML = 'Submit';
             }
         },
 
@@ -567,13 +492,13 @@ var UIController = (function() {
             }
 
             // Add the drop down menu class
-            document.querySelector(dom.nav).classList.toggle(dom.navScreenOpen);
+            document.querySelector(domStrings.nav).classList.toggle(domStrings.navScreenOpen);
             // Change menu btn
-            toggleVisibility(document.querySelector(dom.menu));
+            toggleVisibility(document.querySelector(domStrings.menu));
             // Change logo placement
-            document.querySelector(dom.logo).classList.toggle(dom.logoNavOpen);
+            document.querySelector(domStrings.logo).classList.toggle(domStrings.logoNavOpen);
             // open close nav btn
-            document.querySelector(dom.menuClose).style.visibility = 'visible';
+            document.querySelector(domStrings.menuClose).style.visibility = 'visible';
         },
 
         // Mobile menu close
@@ -587,13 +512,13 @@ var UIController = (function() {
             }
             
             // Add the drop down menu class
-            document.querySelector(dom.nav).classList.toggle(dom.navScreenOpen);
+            document.querySelector(domStrings.nav).classList.toggle(domStrings.navScreenOpen);
             // Change menu btn
-            toggleVisibility(document.querySelector(dom.menu));
+            toggleVisibility(document.querySelector(domStrings.menu));
             // Change logo placement
-            document.querySelector(dom.logo).classList.toggle(dom.logoNavOpen);
+            document.querySelector(domStrings.logo).classList.toggle(domStrings.logoNavOpen);
             // Hide nav close btn
-            document.querySelector(dom.menuClose).style.visibility = 'hidden';
+            document.querySelector(domStrings.menuClose).style.visibility = 'hidden';
         }
     }
 })();
@@ -702,40 +627,40 @@ var globalController = (function(scoreCntrl, UICntrl) {
     var setUpListeners = function() {
 
         // Option A
-        document.querySelector(dom.opA).addEventListener('click', function() {
-            optionSelect(dom.opA, 'a', options);
+        document.querySelector(domStrings.opA).addEventListener('click', function() {
+            optionSelect(domStrings.opA, 'a', options);
         });
 
         // Option B
-        document.querySelector(dom.opB).addEventListener('click', function() {
-            optionSelect(dom.opB, 'b', options);
+        document.querySelector(domStrings.opB).addEventListener('click', function() {
+            optionSelect(domStrings.opB, 'b', options);
         });
 
         // Option C
-        document.querySelector(dom.opC).addEventListener('click', function() {
-            optionSelect(dom.opC, 'c', options);
+        document.querySelector(domStrings.opC).addEventListener('click', function() {
+            optionSelect(domStrings.opC, 'c', options);
         });
 
         // Option D
-        document.querySelector(dom.opD).addEventListener('click', function() {
-            optionSelect(dom.opD, 'd', options);
+        document.querySelector(domStrings.opD).addEventListener('click', function() {
+            optionSelect(domStrings.opD, 'd', options);
         });
         
         // Start Button
-        document.querySelector(dom.btnStart).addEventListener('click', function() {
+        document.querySelector(domStrings.btnStart).addEventListener('click', function() {
             UICntrl.startQuiz();
             UICntrl.showQuestion(currentQuiz, curQue, options);
         });
 
         // Close Button
-        document.querySelector(dom.close).addEventListener('click', function() {
+        document.querySelector(domStrings.close).addEventListener('click', function() {
             resetQuiz();
             closeQuiz();
             UICntrl.hideQuestions();
         });
 
         // Next Question button
-        document.querySelector(dom.btnNext).addEventListener('click', function() {
+        document.querySelector(domStrings.btnNext).addEventListener('click', function() {
             
             
             // Go to next question and submit answer if an option is selected
@@ -751,7 +676,7 @@ var globalController = (function(scoreCntrl, UICntrl) {
                 UICntrl.deselectAll();
                 UICntrl.hideQuestions();
 
-
+                // if the curQue question is the last question
                 if (curQue === currentQuiz.questions.length - 1) {
 
                     // Update UI
@@ -760,7 +685,7 @@ var globalController = (function(scoreCntrl, UICntrl) {
                     UICntrl.showQuestion(currentQuiz, curQue, options);
                     UICntrl.updateButton();
 
-
+                // if it is not the last question
                 } else if (curQue < currentQuiz.questions.length){
 
                     // Update UI
@@ -780,28 +705,28 @@ var globalController = (function(scoreCntrl, UICntrl) {
         });
 
         // Sports 
-        document.querySelector(dom.sports).addEventListener('click', function() {
+        document.querySelector(domStrings.sports).addEventListener('click', function() {
             currentQuiz = certificationData.sports;
             resetVariables();
             UICntrl.openQuiz(currentQuiz);
         });
 
         // Wise guy 
-        document.querySelector(dom.wiseGuy).addEventListener('click', function() {
+        document.querySelector(domStrings.wiseGuy).addEventListener('click', function() {
             currentQuiz = certificationData.wiseGuy;
             resetVariables();
             UICntrl.openQuiz(currentQuiz);
         });
 
         // Calculator
-        document.querySelector(dom.calculator).addEventListener('click', function() {
+        document.querySelector(domStrings.calculator).addEventListener('click', function() {
             currentQuiz = certificationData.calculator;
             resetVariables();
             UICntrl.openQuiz(currentQuiz);
         });
 
-        // Calculator
-        document.querySelector(dom.alpha).addEventListener('click', function() {
+        // Alpha
+        document.querySelector(domStrings.alpha).addEventListener('click', function() {
             currentQuiz = certificationData.alpha;
             resetVariables();
             UICntrl.openQuiz(currentQuiz);
@@ -810,17 +735,23 @@ var globalController = (function(scoreCntrl, UICntrl) {
 
         
         // download 
-        document.querySelector(dom.resultsDownload).addEventListener('click', function() {
+        document.querySelector(domStrings.resultsDownload).addEventListener('click', function() {
             window.open(currentQuiz.pdf);
         });
+
+        document.querySelector(domStrings.dumbassDownload).addEventListener('click', function() {
+            window.open('assets//certifications//dumbass_certification.pdf');
+        });
         
+        // MOBILE LISTENERS 
+
         // menu 
-        document.querySelector(dom.menu).addEventListener('click', function() {
+        document.querySelector(domStrings.menu).addEventListener('click', function() {
             UICntrl.openMenu();
         });
 
         // close menu 
-        document.querySelector(dom.menuClose).addEventListener('click', function() {
+        document.querySelector(domStrings.menuClose).addEventListener('click', function() {
             UICntrl.closeMenu();
         });
     };
@@ -829,7 +760,6 @@ var globalController = (function(scoreCntrl, UICntrl) {
     
     return {
         init: function() {
-        ReactDOM.render(<App />, document.getElementById('app'));
         UICntrl.hideQuiz();
         setUpListeners();
         }
