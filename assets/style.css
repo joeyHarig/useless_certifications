@@ -434,7 +434,7 @@ a {
     font-size: 18px;
   }
   
-  .btn-certify-me:active {
+  .btn-certify-me:active, .btn-certify-me:hover  {
     font-size: 32px;
   }
   
@@ -520,6 +520,11 @@ a {
     width: 25px;
     height: 25px;
     background-size: 25px 25px;
+  }
+  
+  #button-start:hover, #button-next:hover, #results-download:hover, #dumbass-download:hover {
+    color: var(--grey-dark);
+    font-weight: 400;
   }
   
 }
