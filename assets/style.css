@@ -433,7 +433,11 @@ a {
     border-width: 2px;
     font-size: 18px;
   }
-
+  
+  .btn-certify-me:active {
+    font-size: 32px;
+  }
+  
   .certifications-title, .about-title {
     text-align: center;
     margin: 0px 0px 50px 0px;
@@ -561,7 +565,11 @@ a {
     border-width: 3px;
     font-size: 36px;
   }
-
+  
+  .btn-certify-me:active {
+    font-size: 32px;
+  }
+  
   .topics {
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
