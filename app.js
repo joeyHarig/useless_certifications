@@ -151,7 +151,7 @@ const certificationData = {
         new Question( // Question 8
                 "What is the meaning of life?",
                 ["42",
-                "Although no single satisfactory answer exists, by synthesizing the collective works of artists, musicians, directors, and authors, over our recent history, love, is what seems to give our lives the most meaning.",
+                "By synthesizing the works of artists, musicians, and authors, over our recent history, love, is what gives our lives the most meaning.",
                 "We shared a joint account. He convinced her to take everything."],
                 "a"),
         new Question( // Question 9
@@ -750,10 +750,15 @@ var globalController = (function(scoreCntrl, UICntrl) {
             UICntrl.openMenu();
         });
 
-        // close menu 
-        document.querySelector(domStrings.menuClose).addEventListener('click', function() {
-            UICntrl.closeMenu();
-        });
+        // close mobile menu when any nav item is selected
+        var navItems = document.getElementsByClassName(domStrings.navItem);
+        for (var i = 0; 1 <= navItems.length; i++) { // loop thrhrough itmes
+            navItems[i].addEventListener('click', function() { // add an event listener to each
+                if (screen.width <= 766) { // check screen size
+                    UICntrl.closeMenu();  // close menu
+                }
+            });
+        }
     };
 
 

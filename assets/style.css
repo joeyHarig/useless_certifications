@@ -88,7 +88,7 @@ a {
   height: calc(100vh - 80px);
   width: 100%;
   background-size: cover;
-  background-position: bottom;
+  background-position: top;
   z-index: 1;
 }
 
@@ -169,7 +169,7 @@ a {
 /*  TOPICS  */
 
 #sports {
-  background-image: linear-gradient( 45deg,  rgba(211, 23, 23, 0.7), rgba(211, 67, 23, 0.9)), url(img//cert-bg//sports.jpg);
+  background-image: linear-gradient( 45deg,  rgba(45, 122, 64, 0.7), rgba(23, 211, 133, 0.9)), url(img//cert-bg//sports.jpg);
 }
 
 #calculator {
@@ -177,12 +177,12 @@ a {
 }
 
 #wise-guy {
-  background-image: linear-gradient( 45deg, var(--primary-light), var(--primary-lightest)), url(img//sports.jpg);
+  background-image: linear-gradient( 45deg, rgba(23, 198, 211, 0.7), rgba(23, 158, 211, 0.9)), url(img//cert-bg//wiseguy.jpeg);
 }
 
 #alpha {
-  background-image: linear-gradient( 45deg, rgba(23, 211, 70, 0.7), rgba(23, 211, 133, 0.9)), url(img//cert-bg//photosynthesis.jpg);
-}
+  background-image: linear-gradient( 45deg, rgba(211, 23, 23, 0.7), rgba(211, 67, 23, 0.9)), url(img//cert-bg//alpha.jpeg);
+} 
 
 /*   ABOUT   */
 
@@ -192,8 +192,8 @@ a {
   display: inline-block;
   width: 50%;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 18px;
+  line-height: 27px;
   color: var(--grey-dark);
 }
 
@@ -249,52 +249,73 @@ a {
   transform: translate(-50%, -50%);
 }
 
-#quiz-title, #question-title, #results-title {
+#title-box, #question-box, #results-box {
+  width: 80%;
   position: absolute;
-  margin: 75px 10% 0% 10%;
+  margin: 5% 15% 5% 15%; 
+}
+
+#quiz-title, #question-title, #results-title {
+  display: block;
   font-weight: 600;
   font-size: 48px;
   color: var(--primary);
 }
 
 #quiz-description, #question-description, #results-description{
-  position: absolute;
-  margin: 175px 10% 0px 10%;
+  margin-top: 5%;
   font-weight: 400;
-  font-size: 28px;
-  line-height: 42px;
+  font-size: 18px;
+  line-height: 27px;
   color: var(--grey-dark);
-}
-
-#close {
-  margin: 8% 0% 0px 92%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  display: block;
-  -webkit-mask:  url(icons//close.svg) no-repeat 50% 50%;
-  mask: url(icons//close.svg) no-repeat 50% 50%;
-  background-size: 50px 50px;
-  background-color: var(--grey-dark);
 }
 
 #button-start, #button-next, #results-download, #dumbass-download {
+  display: block;
   position: absolute;
-  bottom: 75px;
   left: 50%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, -50%);
   font-weight: 400;
-  font-size: 32px;
   color: var(--grey-dark);
 }
 
-#results-download, #dumbass-download, #button-start {
-  bottom: 20%;
+#options-box {
+  margin-top: 5%;
+  display: grid;
 }
 
-#button-next {
-  bottom: 75px;
+.option-box {
+  margin: 0px 0px 18px 0px;
+  color: var(--grey-dark);
+  font-weight: 400;
+}
+
+.option-text, .option-selector {
+  display: inline;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.option-text {
+  margin-left: 18px;
+  white-space: pre-wrap;
+}
+
+#close {
+  margin: 5% 0% 0px 95%;
+  transform: translate(-50%, -50%);
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  display: block;
+  z-index: 2;
+  -webkit-mask-image: url(icons//close.svg);
+  mask: url(icons//close.svg) no-repeat 50% 50%;
+  background-size: 25px 25px;
+  background-color: var(--grey-dark);
 }
 
 #button-start:hover, #button-next:hover, #results-download:hover {
@@ -302,30 +323,6 @@ a {
   font-weight: 600;
 }
 
-#options-box {
-  position: absolute;
-  margin: 260px 15% 0px 15%;
-}
-
-.option-box {
-  margin: 48px 0px 0px 0px;
-  color: var(--grey-dark);
-  font-weight: 400;
-}
-
-.option-text, .option-selector {
-  display: inline;
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: inherit;
-  color: inherit;
-  cursor: pointer;
-}
-
-.option-text {
-  margin-left: 36px;
-  white-space: pre-wrap;
-}
 
 .option-text:before {
   color: var(--grey-dark);
@@ -469,61 +466,61 @@ a {
   .about-photo { visibility: hidden; }
 
   /*  QUIZ SCREEN  */
+  #certification-quiz-screen {
+    background-color: var(--white);
+  }
 
   #certification-quiz {
     height: 100%;
     width: 100%;
   }
-  #title-box { top: 200px; }
-
+  #title-box, #question-box, #results-box {
+    margin: 15% 10% 30% 10%; 
+  }
+  
   #quiz-title, #question-title, #results-title {
-    margin: 80px 10% 0% 10%;
-    font-size: 24px;
+    font-size: 32px;
   }
   
   #quiz-description, #question-description, #results-description{
-    margin: 160px 10% 0px 10%;
+    margin-top: 15%;
     font-size: 16px;
     line-height: 24px;
   }
   
-  #close {
-    margin: 40px 0% 0px calc(92% - 10px);
-    width: 35px;
-    height: 35px;
-  }
-  
   #button-start, #button-next, #results-download, #dumbass-download {
-    bottom: 20%;
+    top: 60vh;
     font-size: 24px;
   }
   
-  #results-download, #dumbass-download, #button-start { bottom: 20%; }
-  
-  #button-next { bottom: 75px; }
-  
   #options-box {
-    position: absolute;
-    margin: 220px 10% 0px 10%;
+    margin-top: 10%;
   }
   
-  .option-box { margin: 30px 0px 0px 0px; }
+  .option-box {
+    margin: 0px 0px 16px 0px;
+  }
   
   .option-text, .option-selector {
-    display: inline;
     font-size: 16px;
+    line-height: 24px;
   }
   
   .option-text {
-    margin-left: 18px;
-    line-height: 27px; 
-    white-space: pre-wrap;
+    margin-left: 16px;
+  }
+  
+  #close {
+    margin: 80vh 0% 0px 50%;
+    width: 25px;
+    height: 25px;
+    background-size: 25px 25px;
   }
   
 }
 
 /* iPads (portrait and landscape) ----------- */
-@media only screen and (min-width : 767px) and (max-width : 1223px) {
+@media only screen and (min-width : 767px) and (max-width : 1023px) {
 
   #navigation {
     grid-gap: 10px;
@@ -577,10 +574,57 @@ a {
   #certifications {
     margin: 100px 0% 100px 0%;
   }
+  
+  #certification-quiz {
+    height: 80%;
+    width: 80%;
+  }
+  #title-box, #question-box, #results-box {
+    margin: 15% 10% 30% 10%; 
+  }
+  
+  #quiz-title, #question-title, #results-title {
+    font-size: 42px;
+  }
+  
+  #quiz-description, #question-description, #results-description{
+    margin-top: 10%;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  
+  #button-start, #button-next, #results-download, #dumbass-download {
+    top: 50vh;
+    font-size: 36px;
+  }
+  
+  #options-box {
+    margin-top: 10%;
+  }
+  
+  .option-box {
+    margin: 0px 0px 16px 0px;
+  }
+  
+  .option-text, .option-selector {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  
+  .option-text {
+    margin-left: 18px;
+  }
+  
+  #close {
+    margin: 70vh 0% 0px 50%;
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
+  }
 }
 
 /* Desktops and laptops ----------- */
-@media only screen  and (min-width : 1224px) {
+@media only screen  and (min-width : 1024px) {
 
   #navigation {
     padding: 20px 5% 20px 5%;
@@ -609,6 +653,53 @@ a {
 
   .topics {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #certification-quiz {
+    height: 90%;
+    width: 60%;
+  }
+  #title-box, #question-box, #results-box {
+    margin: 5% 10% 10% 10%; 
+  }
+  
+  #quiz-title, #question-title, #results-title {
+    font-size: 42px;
+  }
+  
+  #quiz-description, #question-description, #results-description{
+    margin-top: 5%;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  
+  #button-start, #button-next, #results-download, #dumbass-download {
+    top: 70vh;
+    font-size: 36px;
+  }
+  
+  #options-box {
+    margin-top: 5%;
+  }
+  
+  .option-box {
+    margin: 0px 0px 18px 0px;
+  }
+  
+  .option-text, .option-selector {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  
+  .option-text {
+    margin-left: 18px;
+  }
+  
+  #close {
+    margin: 5% 0% 0px 95%;
+    width: 30px;
+    height: 30px;
+    background-size: 30px 30px;
   }
 
 }
