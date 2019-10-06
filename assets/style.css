@@ -414,6 +414,7 @@ a {
   #header {
     height: calc(100vh - 60px);
     background-image: url(img//thumbs_up/thumbs_up_mobile.png);
+    background-position: bottom;
   }
   
   .slogan {
@@ -489,7 +490,7 @@ a {
   }
   
   #button-start, #button-next, #results-download, #dumbass-download {
-    top: 60vh;
+    top: 70vh;
     font-size: 24px;
   }
   
@@ -511,7 +512,7 @@ a {
   }
   
   #close {
-    margin: 80vh 0% 0px 50%;
+    margin: 90vh 0% 0px 50%;
     width: 25px;
     height: 25px;
     background-size: 25px 25px;
