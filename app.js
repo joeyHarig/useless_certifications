@@ -27,7 +27,7 @@ const certificationData = {
 
     sports: new CertificationQuiz(
         "Certification in Sports", // Title
-        "Have you ever wanted to prove to your friends that you are good at sports? What better way than with a certification in sports?", // description
+        "Have you ever wanted to prove to your friends that you are good at sports? What better way to do so than with a certification in sports? So, put on your eye black and your deodorant and let's get certified!", // description
         "assets//certifications//sports_certification.pdf",
         [   new Question( // Question 1 
                 "Which of the following is not a sport?",
@@ -104,7 +104,7 @@ const certificationData = {
 
     wiseGuy: new CertificationQuiz(
         "Wiseguy Certification", // Title
-        "Are you frequently being accused of sounding like a smartass but don’t have the paperwork to back it up? No problem, simply complete the standardized assessment below and get above a 70% to qualify.", //
+        "Are you frequently being accused of sounding like a smartass but don’t have the paperwork to back it up? No problem, simply complete this standardized assessment below and get a score above 70% to get certified.", //
         "assets//certifications//wiseguy_certification.pdf",
         [   new Question( // Question 1 
                 "What’s up?", // Questions itslef
@@ -120,7 +120,7 @@ const certificationData = {
                 "She took the kids and the house.."],
                 "b"),
         new Question( // Question 3
-                'Click “Yes if you wanna be a wiseguy.',
+                'Click "Yes" if you wanna be a wiseguy.',
                 ["Yes.",
                 "I’m not falling for that.",
                 "I got fired from work because she scheduled the court dates on weekdays."],
@@ -172,7 +172,7 @@ const certificationData = {
 
     alpha: new CertificationQuiz(
         "Certified Alpha", // Title
-        "Do any of your shirts have sleeves? Has your nicotine addiction failed to develop into a health threatening condition? Can you form a sentence without saying, bruh or like? If you answered yes to any of these click away now. We’re looking for real men here",
+        'Do any of your shirts have sleeves? Has your nicotine addiction failed to develop into a health threatening condition? Can you still form a sentence without saying, "bruh" or "like"? If you answered yes to any of these, click away now.',
         "assets//certifications//alpha_certification.pdf", // description
         [   new Question( // Question 1 
                 "What did you eat for breakfast this morning?", // Questions itslef
