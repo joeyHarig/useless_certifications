@@ -480,7 +480,7 @@ a {
     width: 100%;
   }
   #title-box, #question-box, #results-box {
-    margin: 15% 10% 30% 10%; 
+    margin: 10% 10% 30% 10%; 
   }
   
   #quiz-title, #question-title, #results-title {
@@ -488,7 +488,7 @@ a {
   }
   
   #quiz-description, #question-description, #results-description{
-    margin-top: 15%;
+    margin-top: 10%;
     font-size: 16px;
     line-height: 24px;
   }
@@ -499,7 +499,7 @@ a {
   }
   
   #options-box {
-    margin-top: 10%;
+    margin-top: 5%;
   }
   
   .option-box {
