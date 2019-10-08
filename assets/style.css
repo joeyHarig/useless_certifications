@@ -435,7 +435,7 @@ a {
   }
   
   .btn-certify-me:active, .btn-certify-me:hover  {
-    font-size: 32px;
+    transform: none;
   }
   
   .certifications-title, .about-title {
@@ -488,9 +488,9 @@ a {
   }
   
   #quiz-description, #question-description, #results-description{
-    margin-top: 10%;
-    font-size: 16px;
-    line-height: 24px;
+    margin-top: 5%;
+    font-size: 14px;
+    line-height: 21px;
   }
   
   #button-start, #button-next, #results-download, #dumbass-download {
@@ -503,16 +503,16 @@ a {
   }
   
   .option-box {
-    margin: 0px 0px 16px 0px;
+    margin: 0px 0px 14px 0px;
   }
   
   .option-text, .option-selector {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 21px;
   }
   
   .option-text {
-    margin-left: 16px;
+    margin-left: 14px;
   }
   
   #close {
