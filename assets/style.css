@@ -547,9 +547,11 @@ footer {
 }
 
 .about-body {
+  margin: 0% 5% 0 5%;
   font-weight: 400;
   font-size: 14px;
   line-height: 28px;
+  text-align: left;
 }
 
 /*   CONTACT   */
