@@ -17,17 +17,17 @@
 
     <div id="top"></div>
     <div id="navigation" class="sticky">
-        <a class="logo" href="#top">UselessCertifications.com</a>
-        <a class="nav-item" href="#certifications">CERTIFICATIONS</a>
-        <a class="nav-item" href="#about">ABOUT US</a>
-        <a class="nav-item" href="#contact">CONTACT</a>
+        <a class="logo" href="#top" name="home_link">UselessCertifications.com</a>
+        <a class="nav-item" href="#certifications" name="certifications_link">CERTIFICATIONS</a>
+        <a class="nav-item" href="#about" name="about_link">ABOUT US</a>
+        <a class="nav-item" href="#contact" name="contact_link">CONTACT</a>
         <div id="menu"></div>
         <div  class="nav-item" id="menu-close"></div>
     </div>
 
     <header id="header">
         <h1 class="slogan">Let's get Official.</h1>
-        <a class="btn btn-certify-me" href="#cert">Certify Me</a>
+        <a class="btn btn-certify-me" href="#cert" name="certify_me_btn">Certify Me</a>
     </header>
 
     <!------------------------------ Certifications --------------------------->
@@ -35,13 +35,13 @@
         <div id="cert"></div>
         <h1 class="section-title ">Certifications</h1>
         <div class="topics">
-            <div class="topic" id="wiseguy">Wise Guy</div>
-            <div class="topic" id="sports">Sports</div>
-            <div class="topic" id="boomer">Boomer</div>
-            <div class="topic" id="hipster">Hipster</div>
-            <div class="topic" id="calculator">Calculator</div>
-            <div class="topic" id="alpha">Alpha</div>
-            <div class="topic" id="photosynthesis">Photosynthesis</div>
+            <div class="topic" id="wiseguy" name="wiseguy_quiz">Wise Guy</div>
+            <div class="topic" id="sports" name="sports_quiz">Sports</div>
+            <div class="topic" id="boomer" name="boomer_quiz">Boomer</div>
+            <div class="topic" id="hipster" name="hipster_quiz">Hipster</div>
+            <div class="topic" id="calculator" name="calculator_quiz">Calculator</div>
+            <div class="topic" id="alpha" name="alpha_quiz">Alpha</div>
+            <div class="topic" id="photosynthesis" name="photosynthesis_quiz">Photosynthesis</div>
         </div>
     </section>
     <!------------------------------ About --------------------------->
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="form-row">
-                    <input type="submit" class="form-input btn" value="Send">
+                    <input type="submit" class="form-input btn" value="Send" name="send_contact_form_btn">
                 </div>
 
             </form>
@@ -79,21 +79,21 @@
     </section>
     <!------------------------------ Footer --------------------------->
     <footer>
-            <div class="footer-item btn" id="facebook-link"></div>
-            <div class="footer-item btn" id="instagram-link"></div>
-            <div class="footer-item btn" id="twitter-link"></div>
+            <div class="footer-item btn" id="facebook-link" name="facebook_link"></div>
+            <div class="footer-item btn" id="instagram-link" name="instagram_link"></div>
+            <div class="footer-item btn" id="twitter-link" name="twitter_link"></div>
     </footer>
     
     <!------------------------------ Quiz screen --------------------------->
     <div  id="certification-quiz-screen">
         <div id="certification-quiz">
-
+            
             <svg class="btn" id="close"></svg>
 
             <div id="title-box">
                 <div id="quiz-title"></div>
                 <div id="quiz-description"></div>
-                <div class="btn" id="button-start">Start</div>
+                <div class="btn" id="button-start" name="start_quiz_btn">Start</div>
             </div>
 
             <div id="question-box">
@@ -129,10 +129,9 @@
             <div id="results-box">
                 <div id="results-title"></div>
                 <div id="results-description"></div>
-                <div class="btn" id="results-download">View Certificate</div>
-                <div class="btn" id="dumbass-download">View Certificate</div>
+                <div class="btn" id="results-download" name="download_btn">View Certificate</div>
+                <div class="btn" id="dumbass-download" name="download_dumbass_btn">View Certificate</div>
             </div>
-
         </div>
     </div>
   <script src="app.js" type="text/javascript"></script>
