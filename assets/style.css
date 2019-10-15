@@ -103,7 +103,6 @@ a {
   color: var(--primary);
 }
 
-
 .btn-certify-me {
   position: absolute;
   left: 50%;
@@ -114,34 +113,24 @@ a {
   border-color: var(--white);
 }
 
-.btn-certify-me:hover {
-  font-size: 2.3rem;
-  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.30);
-}
-
-.btn-certify-me:active {
-  font-size: 2.2rem;
-}
-
-/*  CERTIFICATIONS  */
-
-#certifications, #about {
+#certifications {
   position: relative;
   width: 80%;
   left: 50%;
   transform: translate(-50%, 0%);
 }
 
-.certifications-title, .about-title {
-  margin: 250px 0px 50px 0px;
+.section-title {
+  text-align: center;
+  margin: 100px 0px 50px 0px;
   font-size: 64px;
   font-weight: 600;
   color: var(--primary);
 }
 
+/*  CERTIFICATIONS  */
 .topics {
   display: grid;
-  margin-top: 100px;
   grid-gap: 30px;
   justify-items: center;
 }
@@ -169,31 +158,51 @@ a {
 /*  TOPICS  */
 
 #sports {
-  background-image: linear-gradient( 45deg,  rgba(45, 122, 64, 0.7), rgba(23, 211, 133, 0.9)), url(img//cert-bg//sports.jpg);
+  background-image: linear-gradient( 45deg,  rgba(5, 107, 30, 0.7), rgba(23, 211, 133, 0.9)), url(img//cert-bg//sports.jpg);
 }
 
 #calculator {
   background-image: linear-gradient( 45deg, rgba(67, 23, 211, 0.7), rgba(120, 23, 211, 0.9)), url(img//cert-bg//calculator.jpg);
 }
 
-#wise-guy {
+#wiseguy {
   background-image: linear-gradient( 45deg, rgba(23, 198, 211, 0.7), rgba(23, 158, 211, 0.9)), url(img//cert-bg//wiseguy.jpeg);
+}
+
+#hipster {
+  background-image: linear-gradient( 45deg, rgba(211, 208, 23, 0.8), rgba(211, 129, 23, 0.9)), url(img//cert-bg//hipster.jpeg);
+}
+
+#boomer {
+  background-image: linear-gradient( 45deg, rgba(0, 81, 255, 0.7), rgba(23, 73, 211, 0.9)), url(img//cert-bg//boomer.jpeg);
 }
 
 #alpha {
   background-image: linear-gradient( 45deg, rgba(211, 23, 23, 0.7), rgba(211, 67, 23, 0.9)), url(img//cert-bg//alpha.jpeg);
 } 
 
+#photosynthesis {
+  background-image: linear-gradient( 45deg, rgba(23, 211, 64, 0.7), rgba(23, 211, 123, 0.9)), url(img//cert-bg//photosynthesis.jpg);
+} 
+
 /*   ABOUT   */
 
+#about, #contact {
+  position: relative;
+  display: block;
+  width: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  align-items: center;
+}
 
 .about-body {
-  position: absolute;
+  text-align: justify;
+  position: relative;
   display: inline-block;
-  width: 50%;
   font-weight: 400;
   font-size: 18px;
-  line-height: 27px;
+  line-height: 36px;
   color: var(--grey-dark);
 }
 
@@ -203,25 +212,110 @@ a {
   color: var(--primary); 
 }
 
-.about-photo {
-  float: right;
-  width: 400px;
-  height: 515px;
-  background-image: url(img//blank_cert.png);
-  background-repeat: no-repeat;
-  text-align: center;
+/*   CONTACT   */
+
+.contact-form {
+  display: block;
+  font-size: 18px;
+  width: 80%;
+  margin-left: 50%;
+  transform: translate(-50%, 0%);
 }
 
-.pic-text {
-  position: relative;
-  top: 40%;
+.form-input {
+  display: inline;
+  font-size: inherit;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 5px;
+  border-color: var(--grey-dark);
   color: var(--grey-dark);
-  font-weight: 600;
 }
 
-.pic-title {
-  font-size: 48px;
-  margin-bottom: 10px;
+.form-text-area:focus, .form-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.form-input[type=text],
+.form-input[type=email] {
+  border-style: solid;
+  padding: 8px 18px 8px 18px;
+  border-width:  1px;
+}
+
+.form-input[type=submit] {
+  width: 20%;
+  margin-left: 50%;
+  transform: translate(-50%, 0%);
+  padding: 8px 8px 8px 8px;
+  background-color: var(--white);
+}
+
+.form-input[type=submit]:hover {
+  border-color: var(--grey-dark);
+  background-color: var(--grey-dark);
+  color: var(--white);
+}
+
+.form-text-area {
+  display: block;
+  border-style: solid;
+  border-color: var(--grey-dark);
+  color: var(--grey-dark);
+  border-width:  1px;
+  border-radius: 5px;
+  padding: 8px 18px 8px 18px;
+  font-size: inherit;
+  width: 100%;
+}
+
+.form-row {
+  margin: 25px auto;
+}
+
+/*  Footer  */
+footer {
+  padding: 100px 0px 100px 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 20vw;
+  margin-left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+#facebook-link, #instagram-link, #twitter-link {
+  background-size: 40px 40px;
+  background-color: var(--grey-dark);
+  width: 40px;
+  height: 40px;
+}
+
+#facebook-link:hover, #instagram-link:hover, #twitter-link:hover {
+  background-color: var(--primary);
+}
+
+#facebook-link {
+  -webkit-mask-image: url(icons//logo-facebook.svg);
+  mask: url(icons//logo-facebook.svg) no-repeat 50% 50%;
+}
+
+#instagram-link {
+  -webkit-mask-image: url(icons//logo-instagram.svg);
+  mask: url(icons//logo-instagram.svg) no-repeat 50% 50%;
+}
+
+#twitter-link {
+  -webkit-mask-image: url(icons//logo-twitter.svg);
+  mask: url(icons//logo-twitter.svg) no-repeat 50% 50%;
+}
+
+.footer-item {
+  display: grid;
+  display: inline-block;
+  margin-left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 
@@ -277,6 +371,7 @@ a {
   transform: translate(-50%, -50%);
   font-weight: 400;
   color: var(--grey-dark);
+  text-align: center;
 }
 
 #options-box {
@@ -337,14 +432,7 @@ a {
   font-weight: 600;
 }
 
-/*  FOOTER  */
-
-.footer {
-  position: relative;
-  height: 500px;
-}
-
-/* smart phones (portrait and landscape) ----------- */
+/* ----------------------------- smart phones (portrait and landscape) ------------------------ */
 @media only screen and (min-width : 320px) and (max-width : 766px) {
   
   #navigation {
@@ -412,7 +500,7 @@ a {
 
 
   #header {
-    height: calc(100vh - 60px);
+    height: calc(90vh - 60px);
     background-image: url(img//thumbs_up/thumbs_up_mobile.png);
     background-position: bottom;
   }
@@ -421,7 +509,7 @@ a {
     text-align: center;
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 30%;
+    top: 25%;
     width: 300px;
     font-size: 64px;
   }
@@ -433,19 +521,14 @@ a {
     border-width: 2px;
     font-size: 18px;
   }
-  
-  .btn-certify-me:active, .btn-certify-me:hover  {
-    transform: none;
-  }
-  
-  .certifications-title, .about-title {
+
+  .section-title {
     text-align: center;
-    margin: 0px 0px 50px 0px;
+    margin: 100px 0px 25px 0px;
     font-size: 40px;
   }
 
-  #certifications, #about { 
-    margin: 100px 0% 50px 0%;
+  #certifications { 
     width: 80%;
   }
 
@@ -457,18 +540,43 @@ a {
     font-size: 24px;
   }
 
+/*   ABOUT   */
 
-  /*   ABOUT   */
+#about, #contact {
+  width: 90%;
+}
 
-  .about-body {
-    width: 100%;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: var(--grey-dark);
-  }
+.about-body {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+}
 
-  .about-photo { visibility: hidden; }
+/*   CONTACT   */
+
+.contact-form {
+  font-size: 14px;
+}
+
+.form-input[type=text],
+.form-input[type=email] {
+  padding: 8px 14px 8px 14px;
+}
+
+.form-text-area {
+  padding: 8px 14px 8px 14px;
+}
+
+.form-row {
+  margin: 20px auto;
+}
+
+/*  Footer  */
+footer {
+  padding: 60px 0px;
+  width: 60vw;
+  left: 50%;
+}
 
   /*  QUIZ SCREEN  */
   #certification-quiz-screen {
@@ -529,7 +637,7 @@ a {
   
 }
 
-/* iPads (portrait and landscape) ----------- */
+/* -------------------------------- iPads (portrait and landscape) ---------------------------------------- */
 @media only screen and (min-width : 767px) and (max-width : 1023px) {
 
   #navigation {
@@ -588,7 +696,21 @@ a {
   #certifications {
     margin: 100px 0% 100px 0%;
   }
+
+  /*   ABOUT   */
+
+  #about, #contact {
+    width: 60%;
+  }
+
+
+  /*  Footer  */
+  footer {
+    padding: 80px 0px;
+    width: 40vw;
+  }
   
+  /*  Quiz Screen  */
   #certification-quiz {
     height: 80%;
     width: 80%;
@@ -637,7 +759,7 @@ a {
   }
 }
 
-/* Desktops and laptops ----------- */
+/* ------------------------------------------- Desktops and laptops ---------------------------------------------- */
 @media only screen  and (min-width : 1024px) {
 
   #navigation {
@@ -660,8 +782,16 @@ a {
   .btn-certify-me {
     bottom: 10%;
     padding: 15px;
-    font-size: 32px;
     border-width: 3px;
+    font-size: 36px;
+  }
+
+  .btn-certify-me:hover {
+    font-size: 38px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.30);
+  }
+  
+  .btn-certify-me:active {
     font-size: 36px;
   }
 
@@ -674,7 +804,7 @@ a {
     width: 60%;
   }
   #title-box, #question-box, #results-box {
-    margin: 5% 10% 10% 10%; 
+    margin: 10% 10% 10% 10%; 
   }
   
   #quiz-title, #question-title, #results-title {
@@ -688,7 +818,7 @@ a {
   }
   
   #button-start, #button-next, #results-download, #dumbass-download {
-    top: 70vh;
+    top: 65vh;
     font-size: 36px;
   }
   
@@ -718,7 +848,7 @@ a {
 
 }
 
-/* Large screens ----------- */
+/* --------------------------------- Large screens --------------------------------- */
 @media only screen  and (min-width : 1824px) {
 
 

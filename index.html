@@ -5,19 +5,9 @@
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149507678-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-149507678-1');
-  </script>
+  <script src="analytics.js" type="text/javascript"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,600,900" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="assets/style.css">
   <title>Useless Certifications</title>
@@ -25,16 +15,14 @@
 
 <body>
 
-  <div>
-    <div id="head"></div>
-
-    <div id="navigation" class=" sticky">
-        <a class="logo" href="#head">UselessCertifications.com</a>
-            <a class="nav-item" href="#cert">CERTIFICATIONS</a>
-            <a class="nav-item" href="#ab">ABOUT</a>
-            <a class="nav-item" href="#cont">CONTACT</a>
-        <svg id="menu"></svg>
-        <svg  class="nav-item" id="menu-close"></svg>
+    <div id="top"></div>
+    <div id="navigation" class="sticky">
+        <a class="logo" href="#top">UselessCertifications.com</a>
+        <a class="nav-item" href="#certifications">CERTIFICATIONS</a>
+        <a class="nav-item" href="#about">ABOUT US</a>
+        <a class="nav-item" href="#contact">CONTACT</a>
+        <div id="menu"></div>
+        <div  class="nav-item" id="menu-close"></div>
     </div>
 
     <header id="header">
@@ -42,29 +30,61 @@
         <a class="btn btn-certify-me" href="#cert">Certify Me</a>
     </header>
 
-    <div id="certifications">
+    <!------------------------------ Certifications --------------------------->
+    <section id="certifications" class="section">
         <div id="cert"></div>
-        <h1 class="certifications-title">Certifications</h1>
+        <h1 class="section-title ">Certifications</h1>
         <div class="topics">
-            <div class="topic" id="wise-guy">Wise Guy</div>
-            <div class="topic" id="alpha">Alpha</div>
+            <div class="topic" id="wiseguy">Wise Guy</div>
             <div class="topic" id="sports">Sports</div>
+            <div class="topic" id="boomer">Boomer</div>
+            <div class="topic" id="hipster">Hipster</div>
             <div class="topic" id="calculator">Calculator</div>
+            <div class="topic" id="alpha">Alpha</div>
+            <div class="topic" id="photosynthesis">Photosynthesis</div>
         </div>
-    </div>
-
-    <div id="ab"></div>
-    <div id="about">
-        <h1 class="about-title">About Us</h1>
+    </section>
+    <!------------------------------ About --------------------------->
+    <section id="about" class="section">
+        <h1 class="section-title ">About Us</h1>
         <div class="about-body">
-        Have you ever wanted a certification that didn’t cost $200,000 in tuition? Have you been longing for a sense of accomplishment in your life that only a piece of paper can provide? Look no further than to the one and only <p class="bold">UselessCertifications.com</p>. Our highly advanced algorithm will determine whether or not you’ve got what it takes to earn the title of your dreams, or the title you deserve. So, don’t let shady doctors have all the fun, get a useless certificate today!
+        Have you ever wanted a certification that didn’t cost $200,000 in tuition? Have you been longing for a sense of accomplishment in your life that only a piece of paper can provide? Look no further than to the one and only <p class="bold">UselessCertifications.com</p>. Our highly advanced algorithm will determine whether or not you’ve got what it takes to earn the title of your dreams, or the title you deserve. Our mission is to get you certified and ready for the real world. There's no better way to prepare and prove yourself than with one of our official certifications. So, don’t let shady doctors have all the fun, get a useless certification today!
         </div>
-        <div class="about-photo">
-            <div class="pic-title pic-text">Certified</div>
-            <div class="pic-text">"It doesn't get more real than this"</div>
+    </section>
+
+    <!------------------------------ Contact --------------------------->
+    <section id="contact" class="section">
+        <h1 class="section-title ">Contact Us</h1>
+        <div class="contact-form">
+            <form method="post" action="#">
+
+                <div class="form-row">
+                    <input class="form-input" type="text" name="name" id="name" placeholder="Name" required>
+                </div>
+
+                <div class="form-row">
+                    <input class="form-input" type="email" name="email" id="email" placeholder="Email" required>
+                </div>
+                
+                <div class="form-row">
+                    <textarea class="form-text-area" name="message" id="message" placeholder="Your Message" rows="6"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <input type="submit" class="form-input btn" value="Send">
+                </div>
+
+            </form>
         </div>
-    </div>
+    </section>
+    <!------------------------------ Footer --------------------------->
+    <footer>
+            <div class="footer-item btn" id="facebook-link"></div>
+            <div class="footer-item btn" id="instagram-link"></div>
+            <div class="footer-item btn" id="twitter-link"></div>
+    </footer>
     
+    <!------------------------------ Quiz screen --------------------------->
     <div  id="certification-quiz-screen">
         <div id="certification-quiz">
 
@@ -115,7 +135,6 @@
 
         </div>
     </div>
-</div>
   <script src="app.js" type="text/javascript"></script>
 </body>
 
