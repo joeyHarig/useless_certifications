@@ -5,7 +5,8 @@ window.dataLayer = window.dataLayer || [];
 
 document.addEventListener('click', function(event) {
     if(event.target.name != null) {
-        ga('send', {
+        console.log(event.target.name);
+        window.ga('send', {
             hitType: 'event',
             eventCategory: event.target.name,
             eventAction: 'click'
