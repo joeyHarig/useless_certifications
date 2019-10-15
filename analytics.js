@@ -5,11 +5,6 @@ window.dataLayer = window.dataLayer || [];
 
 document.addEventListener('click', function(event) {
     if(event.target.name != null) {
-        console.log(event.target.name);
-        gtag('send', {
-            hitType: 'event',
-            eventCategory: event.target.name,
-            eventAction: 'click'
-        });
+        gtag('event', event.target.name, {});
     }
 });

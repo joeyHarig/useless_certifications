@@ -443,13 +443,13 @@ const certificationData = [
     new CertificationQuiz(
         "boomer", // domID
         "Boomer Certification", // Title
-        "The baby-boomer generation has arguably experienced the best of what America has to offer, all while flirting with the idea of launching the world into an unsurvivable nuclear holocaust. With everything from woodstock and free-love in their teenage years, abondant financial security once they shaped up, joined the workforce and decided to have families, and generous medicaid and welfare programs in their retirement. Remind those pesky gen x kids whos boss or show gramps you’re the one who deserves to cash those social security checks with this short quiz.", // description
+        "The baby-boomer generation has arguably experienced the best of what America has to offer, all while flirting with the idea of launching the world into an unsurvivable nuclear holocaust. Remind those pesky gen x kids who's boss and show gramps you’re the one who deserves to cash those social security checks with our short quiz.", // description
         "assets//certifications//boomer_certification.pdf",
         [   new Question( // Question 1 
                 "Which of these is unacceptable?", // Questions itslef
-                ["Tanking the economy and ruining social security for future generations", //  option a
+                ["Tanking the economy for future generations", //  option a
                 "Trashing the planet and dying before experiencing any consequences", // option b
-                "Overfishing the oceans and weakening one of the most crucial food-groups for the overarching animal kingdom", // option c
+                "Overfishing the oceans", // option c
                 "Kids skateboarding on sidewalks"], // option d
                 "d"), // answer
             new Question( // Question 2
@@ -470,9 +470,8 @@ const certificationData = [
             new Question( // Question 5
                 "How strong is your concept of inflation",
                 ["I hardly know her",
-                "Cost of living is much higher now; most families need both spouses in the workforce.",
-                "Savings are wasting away with time, it’s going to take longer for future generations to retire and put their kids through college",
-                "It’s made worse by reckless gov. spending catering to the now senior-aged, voting block with unsustainable retirement and medicare programs."],
+                "Cost of living is much higher now; families need both spouses in the workforce.",
+                "Savings are wasting away with time, it’s going to take longer for future generations to retire."],
                 "a"),
             new Question( // Question 6
                 "You see a teenager on their phone instead of engaging in manual labor. What conclusions can you draw?",
@@ -483,16 +482,15 @@ const certificationData = [
                 "d"),
             new Question( // Question 7
                 "When do you plan to retire",
-                ["I retired in my 60s because I voted liberally for taxpayers to create social programs which benefited my age-group",
-                "Never, since social security will most likely collapses in 2033",
+                ["I retired in my 60s because for taxpayers to create social programs which benefited my age-group",
+                "Never. Social security will most likely collapse in 2033.",
                 "That’s even an option?"],
- 
                 "a"),
             new Question( // Question 8
                 "Which of the following are acceptable past-times for the youth?",
                 ["Vaping",
                 "Social media",
-                "Being homeless and following musicians around the country as part of a psychedelic induced mob of strangers with no discernable self-control or life-long aspirations"], 
+                "Following musicians around the country as part of a psychedelic induced mob of strangers without discernable self-control"], 
                 "c")
         ]   
     )
