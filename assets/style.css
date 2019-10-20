@@ -578,6 +578,7 @@ footer {
   padding: 60px 0px;
   width: 60vw;
   left: 50%;
+  transform: translate(-50%, 0%);
 }
 
   /*  QUIZ SCREEN  */
@@ -645,7 +646,7 @@ footer {
   #navigation {
     grid-gap: 10px;
     grid-template-columns: 50% 1fr 1fr 1fr;
-    padding: 20px 5% 20px 5%;
+    padding: 25px 20px 25px 20px;
     height: 80px;
   }
 
