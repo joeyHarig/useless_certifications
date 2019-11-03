@@ -38,6 +38,11 @@ a {
   text-decoration: none;
 }
 
+button {
+  border-style: none;
+  cursor: pointer;
+}
+
 .sticky {
   position: -webkit-sticky; /* Safari */
   position: sticky;
@@ -367,13 +372,22 @@ footer {
 #button-start, #button-next, #results-download, #dumbass-download {
   display: block;
   position: absolute;
+  text-align: center;
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 400;
-  color: var(--grey-dark);
-  text-align: center;
+  padding: 10px 30px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--primary);
+  background-color: var(--white);
+  color: var(--primary);
 }
 
+#button-start:hover, #button-next:hover, #results-download:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
 #options-box {
   margin-top: 5%;
   display: grid;
@@ -413,10 +427,6 @@ footer {
   background-color: var(--grey-dark);
 }
 
-#button-start:hover, #button-next:hover, #results-download:hover {
-  color: var(--primary);
-  font-weight: 600;
-}
 
 
 .option-text:before {
